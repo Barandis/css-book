@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 import Head from 'next/head'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Header from './header'
 import Nav from './nav'
@@ -14,6 +14,7 @@ const StyledContainer = styled.div`
   padding: 0;
   margin: 0;
   display: flex;
+  background-color: var(--background-color);
 `
 
 const StyledNavContainer = styled.div`
@@ -63,8 +64,29 @@ const StyledMain = styled.main`
 
 const Layout = ({ children, title }) => {
   const [collapsed, setCollapsed] = useState(true)
+  const [theme, setTheme] = useState('light')
 
   const toggleCollapse = () => setCollapsed(!collapsed)
+
+  const saveTheme = theme => {
+    setTheme(theme)
+    localStorage.setItem('theme', theme)
+    document.documentElement.setAttribute('data-theme', theme)
+  }
+
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      saveTheme('dark')
+    } else {
+      saveTheme('light')
+    }
+  }
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme')
+    document.documentElement.setAttribute('data-theme', theme)
+    setTheme(theme)
+  }, [])
 
   /* eslint-disable max-len */
   return (
@@ -87,7 +109,7 @@ const Layout = ({ children, title }) => {
       </StyledNavContainer>
       <StyledContentContainer>
         <StyledContentHeader>
-          <Header toggleCollapse={toggleCollapse} />
+          <Header toggleCollapse={toggleCollapse} toggleTheme={toggleTheme} />
         </StyledContentHeader>
         <StyledContent>
           <StyledMain>{children}</StyledMain>

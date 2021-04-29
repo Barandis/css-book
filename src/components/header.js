@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import { Menu } from '@material-ui/icons'
+import { Brightness4, Menu } from '@material-ui/icons'
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
@@ -16,13 +16,13 @@ const StyledHeader = styled.header`
 
 const StyledButtons = styled.div`
   flex: 0;
-  color: var(--text-color-secondary);
+  display: flex;
 `
 
 const StyledMenuButton = styled.button`
   border: none;
   background-color: transparent;
-  margin: 0;
+  margin: 0 1em 0 0;
   padding: 0;
   cursor: pointer;
 
@@ -37,11 +37,14 @@ const StyledTitle = styled.div`
   color: var(--text-color-secondary);
 `
 
-const Header = ({ toggleCollapse }) => (
+const Header = ({ toggleCollapse, toggleTheme }) => (
   <StyledHeader>
     <StyledButtons>
       <StyledMenuButton onClick={toggleCollapse}>
-        <Menu />
+        <Menu style={{ color: 'var(--text-color-secondary)' }} />
+      </StyledMenuButton>
+      <StyledMenuButton onClick={toggleTheme}>
+        <Brightness4 style={{ color: 'var(--text-color-secondary)' }} />
       </StyledMenuButton>
     </StyledButtons>
     <StyledTitle>Header</StyledTitle>

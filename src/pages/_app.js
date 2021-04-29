@@ -13,7 +13,8 @@ const GlobalStyle = createGlobalStyle`
   --header-height: 54px;
 
   --text-color-primary: black;
-  --text-color-secondary: #888888;
+  --text-color-secondary: #747474;
+  --background-color: white;
 
   box-sizing: border-box;
   font-size: 16px;
@@ -22,6 +23,12 @@ const GlobalStyle = createGlobalStyle`
   line-height: 1.5;
   letter-spacing: 0.03rem;
   color: var(--text-color-primary);
+}
+
+[data-theme="dark"] {
+  --background-color: #131516;
+  --text-color-primary: #98a3ad;
+  --text-color-secondary: #43484d;
 }
 
 *,
