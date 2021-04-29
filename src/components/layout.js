@@ -61,7 +61,7 @@ const StyledMain = styled.main`
   height: 100%;
 `
 
-export default function Layout({ children, title }) {
+const Layout = ({ children, title }) => {
   const [collapsed, setCollapsed] = useState(true)
 
   const toggleCollapse = () => setCollapsed(!collapsed)
@@ -97,3 +97,5 @@ export default function Layout({ children, title }) {
   )
   /* eslint-enable max-len */
 }
+
+export default Layout
