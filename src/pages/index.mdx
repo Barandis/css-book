@@ -1,0 +1,27 @@
+import styled from 'styled-components'
+import Layout from '../components/layout'
+
+export const metadata = {
+  title: 'Lorem Ipsum',
+  author: 'Thomas J. Otterson',
+  modified: '2021-04-29T01:37:25Z',
+}
+
+export const StyledImage = styled.img`
+  float: left;
+  margin-right: 1rem;
+  width: 200px;
+  height: 130px;
+`
+
+# Lorem Ipsum
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin augue mauris, maximus sed lacinia in, efficitur non lacus. Sed placerat convallis quam eu pulvinar. Sed eleifend finibus diam, in ultrices nibh lacinia fermentum. Phasellus pellentesque pulvinar sem, at sagittis neque malesuada nec. Donec hendrerit mauris sit amet cursus eleifend. Curabitur condimentum augue at magna eleifend porttitor. Vivamus semper lacus id diam mollis dapibus. Etiam ac sapien a nunc maximus interdum. Nam aliquet ligula eu lectus auctor, eget cursus mi porttitor. Fusce sit amet nibh eget ligula fringilla accumsan blandit quis justo.
+
+<StyledImage src="https://picsum.photos/200/130" alt="Lorem Ipsum" />
+
+Donec tincidunt, augue id lobortis suscipit, elit ipsum commodo ipsum, id egestas dolor nibh ut justo. Cras dictum fermentum erat nec ornare. Vestibulum volutpat nisi purus, pellentesque fermentum turpis convallis ut. Pellentesque mattis convallis nulla, a cursus massa suscipit eget. Donec felis leo, pharetra ac sem vel, scelerisque tempor enim. Vivamus pellentesque lacus nisl, eu sollicitudin erat ultrices sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris rutrum tortor id massa finibus, vel auctor est molestie. Aenean euismod congue malesuada. Integer nec urna est. Maecenas eget viverra felis, id condimentum lacus. Suspendisse semper feugiat nisl. Donec tellus enim, blandit at rhoncus ut, fringilla in quam. Donec eleifend elit tellus, sit amet pretium nisi sollicitudin vel.
+
+Praesent fringilla metus eu tortor lobortis, vulputate tempus dolor faucibus. Aliquam scelerisque ultricies interdum. Nullam ornare leo in nisi facilisis, in eleifend massa consectetur. Nam finibus nibh quis felis faucibus, eu tristique augue fringilla. Praesent elit ex, cursus sed nulla in, fringilla eleifend neque. Vestibulum nec aliquam eros. In suscipit ex eu dui rhoncus, eget sollicitudin enim hendrerit. Nunc ac fermentum metus. Sed sagittis nulla id eleifend fringilla. In orci nunc, consectetur vel nunc in, ornare imperdiet velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin eros purus, pretium nec mi ut, ultrices congue sem. Pellentesque vitae dignissim tortor, et convallis nibh. Suspendisse vehicula faucibus purus, quis consectetur turpis. Fusce vitae lacus id justo auctor luctus sed lobortis nisi.
+
+export default ({ children }) => <Layout title={metadata.title}>{children}</Layout>
