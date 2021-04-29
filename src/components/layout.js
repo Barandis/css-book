@@ -66,13 +66,18 @@ const Layout = ({ children, title }) => {
   const [collapsed, setCollapsed] = useState(true)
   const [theme, setTheme] = useState('light')
 
-  const toggleCollapse = () => setCollapsed(!collapsed)
+  const saveCollapsed = collapsed => {
+    setCollapsed(collapsed)
+    localStorage.setItem('collapsed', collapsed.toString())
+  }
 
   const saveTheme = theme => {
     setTheme(theme)
     localStorage.setItem('theme', theme)
     document.documentElement.setAttribute('data-theme', theme)
   }
+
+  const toggleCollapse = () => saveCollapsed(!collapsed)
 
   const toggleTheme = () => {
     if (theme === 'light') {
@@ -86,6 +91,9 @@ const Layout = ({ children, title }) => {
     const theme = localStorage.getItem('theme')
     document.documentElement.setAttribute('data-theme', theme)
     setTheme(theme)
+
+    const collapsed = localStorage.getItem('collapsed') === 'true'
+    setCollapsed(collapsed)
   }, [])
 
   /* eslint-disable max-len */
