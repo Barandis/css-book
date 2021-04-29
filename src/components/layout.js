@@ -1,3 +1,8 @@
+// Copyright (c) 2021 Thomas J. Otterson
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
 import Head from 'next/head'
 import { useState } from 'react'
 import styled from 'styled-components'

@@ -7,6 +7,15 @@
     "build": "next build",
     "start": "next start"
   },
+  "license": "MIT",
+  "author": "Thomas Otterson <tjotterson@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Barandis/css-book.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Barandis/css-book/issues"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
